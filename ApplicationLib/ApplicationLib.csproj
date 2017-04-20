@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF3F628D-A8EF-473C-9665-02C35C35FB15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApplicationLib</RootNamespace>
+    <AssemblyName>ApplicationLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Abstract\AEntity.cs" />
+    <Compile Include="Entities\Abstract\BaseEntity.cs" />
+    <Compile Include="Entities\Abstract\IEntity.cs" />
+    <Compile Include="Entities\App\AppArea.cs" />
+    <Compile Include="Entities\App\AppCountry.cs" />
+    <Compile Include="Entities\App\AppCountryAttr.cs" />
+    <Compile Include="Entities\App\AppLanguage.cs" />
+    <Compile Include="Entities\App\AppSetting.cs" />
+    <Compile Include="Entities\App\AppTax.cs" />
+    <Compile Include="Entities\CustomField\CustomField.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldAttr.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldGroup.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldGroupAttr.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldOption.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldOptionAttr.cs" />
+    <Compile Include="Entities\CustomField\CustomFieldType.cs" />
+    <Compile Include="Entities\Entities\Entity.cs" />
+    <Compile Include="Entities\Entities\EntityAddress.cs" />
+    <Compile Include="Entities\Entities\EntityContact.cs" />
+    <Compile Include="Entities\Entities\EntityContactRole.cs" />
+    <Compile Include="Entities\Entities\EntityContactRoleVsAppArea.cs" />
+    <Compile Include="Entities\Entities\EntityGroup.cs" />
+    <Compile Include="Entities\Entities\EntityType.cs" />
+    <Compile Include="Entities\Entities\EntityVsCustomField.cs" />
+    <Compile Include="Entities\Entities\EntityVsicon.cs" />
+    <Compile Include="Entities\Events\Event.cs" />
+    <Compile Include="Entities\Icons\Icon.cs" />
+    <Compile Include="Entities\Icons\IconAttr.cs" />
+    <Compile Include="Entities\Products\Product.cs" />
+    <Compile Include="Entities\Products\ProductAttr.cs" />
+    <Compile Include="Entities\Products\ProductBrand.cs" />
+    <Compile Include="Entities\Products\ProductBrandAttr.cs" />
+    <Compile Include="Entities\Products\ProductCategory.cs" />
+    <Compile Include="Entities\Products\ProductCategoryAttr.cs" />
+    <Compile Include="Entities\Products\ProductPhoto.cs" />
+    <Compile Include="Entities\Products\ProductPhotoAttr.cs" />
+    <Compile Include="Entities\Products\ProductVsCustomField.cs" />
+    <Compile Include="Entities\Products\ProductVsIcon.cs" />
+    <Compile Include="Entities\Products\ProductVsProductCategory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
