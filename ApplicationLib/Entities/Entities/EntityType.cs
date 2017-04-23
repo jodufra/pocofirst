@@ -1,12 +1,12 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class EntityType : BaseEntity, ILinqExtent
+    public class EntityType : BaseEntity
     {
         [DataMember(IsRequired = true)]
         public string Name { get; set; }
+
     }
 }

@@ -1,13 +1,13 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class ProductVsIcon : BaseEntity, ILinqExtent
+    public class ProductVsIcon : BaseEntity
     {
         [DataMember]
         public int IdProduct { get; set; }
+
         [DataMember]
         public int IdIcon { get; set; }
     }

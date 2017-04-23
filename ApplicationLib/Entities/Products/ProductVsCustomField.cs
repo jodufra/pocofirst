@@ -1,10 +1,9 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class ProductVsCustomField : CustomFieldEntity, ILinqExtent
+    public class ProductVsCustomField : CustomFieldEntity
     {
         [DataMember]
         public int IdProduct { get; set; }

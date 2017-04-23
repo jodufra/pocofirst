@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
@@ -8,6 +7,7 @@ namespace Application.Entities
     {
         [DataMember(IsRequired = true)]
         public string Id { get; set; }
+
         [DataMember(IsRequired = true)]
         public string Name { get; set; }
 

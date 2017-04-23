@@ -1,10 +1,9 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class CustomFieldType : BaseEntity, ILinqExtent
+    public class CustomFieldType : BaseEntity
     {
         public const int BOOLEAN = 1;
         public const int TEXT = 2;

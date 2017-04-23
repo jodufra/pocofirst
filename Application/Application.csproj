@@ -67,7 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Migration\Repositories\SchemaRepository.cs" />
     <Compile Include="Migration\Utilities\Converter.cs" />
-    <Compile Include="Migration\Utilities\TypesLookup.cs" />
+    <Compile Include="Migration\Utilities\TypesLookupService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -74,7 +74,7 @@ namespace Application.Migration
         private void LoadSchemasAndEntities()
         {
             Schemas = SchemaRepository.GetSchemas();
-            Entities = TypesLookup.GetDataContractsInNamespace(Options.EntitiesNamespace, Options.EntitiesExcluded).ToList();
+            Entities = TypesLookupService.DataContractsInNamespace(Options.EntitiesNamespace, Options.EntitiesExcluded).ToList();
             Tables = new Dictionary<string, Table>();
 
             Table table; Type type; PropertyInfo property;
@@ -94,8 +94,11 @@ namespace Application.Migration
                 }
 
                 property = null;
+
                 if (table.Entity != null)
+                {
                     property = table.Entity.GetProperties(instancePublic).Where(x => Attribute.IsDefined(x, typeof(DataMemberAttribute))).FirstOrDefault();
+                }
 
                 table[schema.ColumnName] = property != null ? new Column(property, schema) : new Column(schema);
             }
@@ -103,14 +106,21 @@ namespace Application.Migration
             foreach (var entity in Entities)
             {
                 string tableName = entity.Name.ToSnakeCase('_');
+
                 if (!Tables.ContainsKey(tableName))
+                {
                     Tables.Add(tableName, new Table(entity));
+                }
 
                 table = Tables[tableName];
+
                 if (table.Entity == null)
+                {
                     table.Entity = entity;
+                }
 
                 var fields = table.Entity.GetProperties(instancePublic).Where(x => Attribute.IsDefined(x, typeof(DataMemberAttribute)));
+
                 foreach (var field in fields)
                 {
                     string columnName = field.Name;

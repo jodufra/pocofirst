@@ -6,16 +6,16 @@ using System.Runtime.Serialization;
 
 namespace Application.Migration.Utilities
 {
-    public static class TypesLookup
+    public static class TypesLookupService
     {
-        public static IEnumerable<Type> GetTypesInNamespace(string nameSpace)
+        public static IEnumerable<Type> TypesInNamespace(string nameSpace)
         {
             return AppDomain.CurrentDomain.GetAssemblies().SelectMany(t => t.GetTypes()).Where(t => t.IsClass && t.Namespace == nameSpace);
         }
 
-        public static IEnumerable<Type> GetDataContractsInNamespace(string nameSpace, List<Type> excluded)
+        public static IEnumerable<Type> DataContractsInNamespace(string nameSpace, List<Type> excluded)
         {
-            return GetTypesInNamespace(nameSpace).Where(c => !excluded.Contains(c) && Attribute.GetCustomAttribute(c, typeof(DataContractAttribute)) != null);
+            return TypesInNamespace(nameSpace).Where(c => !excluded.Contains(c) && Attribute.GetCustomAttribute(c, typeof(DataContractAttribute)) != null);
         }
     }
 

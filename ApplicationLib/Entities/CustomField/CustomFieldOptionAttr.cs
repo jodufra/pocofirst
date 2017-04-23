@@ -1,12 +1,9 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
-using System.Web.Mvc;
-using Application.Repositories;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class CustomFieldOptionAttr : BaseEntity, ILinqExtent
+    public class CustomFieldOptionAttr : BaseEntity
     {
         [DataMember]
         public int IdCustomFieldOption { get; set; }
@@ -17,15 +14,5 @@ namespace Application.Entities
         [DataMember(IsRequired = true)]
         public string Value { get; set; }
 
-        private CustomFieldOption _Option = null;
-        public CustomFieldOption Option
-        {
-            get
-            {
-                if (_Option == null && IdCustomFieldOption > 0)
-                    _Option = Configuration.Resolver.GetRepository<CustomFieldOptionRepository>().GetById(this.IdCustomFieldOption);
-                return _Option;
-            }
-        }
     }
 }

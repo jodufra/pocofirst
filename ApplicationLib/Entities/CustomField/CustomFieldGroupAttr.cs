@@ -1,18 +1,18 @@
-﻿using System.Linq;
-using System.Runtime.Serialization;
-using System.Web.Mvc;
-using Application.Repositories;
+﻿using System.Runtime.Serialization;
 
 namespace Application.Entities
 {
     [DataContract]
-    public class CustomFieldGroupAttr : BaseEntity, ILinqExtent
+    public class CustomFieldGroupAttr : BaseEntity
     {
         [DataMember]
         public int IdCustomFieldGroup { get; set; }
+
         [DataMember(IsRequired = true)]
         public string IdAppLanguage { get; set; }
+
         [DataMember(IsRequired = true)]
         public string Title { get; set; }
+
     }
 }

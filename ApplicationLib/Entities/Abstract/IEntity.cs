@@ -14,8 +14,8 @@ namespace Application.Entities
 
     public interface IEntityWithAttr
     {
-        IList<string> Populate(NameValueCollection data);
-        bool HasLanguageDefined(string lang);
+        //IList<string> Populate(NameValueCollection data);
+        //bool HasLanguageDefined(string lang);
         //IList<T> GetAttrs<T>() where T : IEntity;
     }
 
@@ -30,9 +30,5 @@ namespace Application.Entities
         string Reference { get; set; }
         string IdAppLanguage { get; set; }
         string Value { get; set; }
-
-        bool GetBoolValue();
-
-        string GetTextValue();
     }
 }
